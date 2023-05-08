@@ -2,11 +2,15 @@ package com.WriteArticle.springProject.model;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import org.hibernate.Hibernate;
 
-import java.util.List;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name = "/article")
 public class Article {
@@ -25,6 +29,19 @@ public class Article {
     @Column(name = "desc")
     private String desc;
 
+/*
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Article article = (Article) o;
+        return id != null && Objects.equals(id, article.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 
+ */
 }

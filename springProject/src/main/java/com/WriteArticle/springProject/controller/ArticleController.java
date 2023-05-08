@@ -1,5 +1,6 @@
 package com.WriteArticle.springProject.controller;
 
+import com.WriteArticle.springProject.dto.ArticleDto;
 import com.WriteArticle.springProject.service.ArticleService;
 import com.WriteArticle.springProject.model.Article;
 import lombok.RequiredArgsConstructor;
@@ -19,12 +20,12 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @GetMapping
-    public ResponseEntity<List<Article>> getAllArticle(){
+    public ResponseEntity<List<ArticleDto>> getAllArticle(){
         return new ResponseEntity<>(articleService.getAllArticle(),OK);
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Article> getArticle(@PathVariable Long id){
+    public ResponseEntity<ArticleDto> getArticle(@PathVariable Long id){
         return new ResponseEntity<>(articleService.getArticleById(id),OK);
     }
 
@@ -35,12 +36,12 @@ public class ArticleController {
     }
 
     @PostMapping
-    public ResponseEntity<Article> createArticle(@RequestBody Article newArticle){
+    public ResponseEntity<ArticleDto> createArticle(@RequestBody ArticleDto newArticle){
         return new ResponseEntity<>(articleService.createArticle(newArticle),CREATED);
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Article> updateArticle(@PathVariable Long id, @RequestBody Article articleData){
+    public ResponseEntity<ArticleDto> updateArticle(@PathVariable Long id, @RequestBody ArticleDto articleData){
         articleService.updateArticle(id, articleData);
         return new ResponseEntity<>(OK);
     }

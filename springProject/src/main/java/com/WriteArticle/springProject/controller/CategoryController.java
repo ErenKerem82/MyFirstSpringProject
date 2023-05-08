@@ -1,5 +1,6 @@
 package com.WriteArticle.springProject.controller;
 
+import com.WriteArticle.springProject.dto.CategoryDto;
 import com.WriteArticle.springProject.model.Article;
 import com.WriteArticle.springProject.model.Category;
 import com.WriteArticle.springProject.service.ArticleService;
@@ -21,12 +22,12 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @GetMapping
-    public ResponseEntity<List<Category>> getAllCategory(){
+    public ResponseEntity<List<CategoryDto>> getAllCategory(){
         return new ResponseEntity<>(categoryService.getAllCategory(),OK);
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Category> getCategory(@PathVariable Long id){
+    public ResponseEntity<CategoryDto> getCategory(@PathVariable Long id){
         return new ResponseEntity<>(categoryService.getCategoryById(id),OK);
     }
 
@@ -37,12 +38,12 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<Category> createCategory(@RequestBody Category newCategory){
+    public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto newCategory){
         return new ResponseEntity<>(categoryService.createCategory(newCategory),CREATED);
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category categoryeData){
+    public ResponseEntity<CategoryDto> updateCategory(@PathVariable Long id, @RequestBody CategoryDto categoryeData){
         categoryService.updateArticle(id, categoryeData);
         return new ResponseEntity<>(OK);
     }

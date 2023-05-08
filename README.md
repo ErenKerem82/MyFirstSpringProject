@@ -1,2 +1,2 @@
 # MyFirstSpringProject
-crud tabanlı restAPI projesi
+crud tabanlı restFulAPI projesi

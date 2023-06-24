@@ -53,6 +53,7 @@ public class ArticleService {
 
     public void updateArticle(Long id, ArticleDto articleData) {
         Optional<Article> oldArticle = articleRepository.findById(id);
+        oldArticle.get().setAuthor(articleData.getAuthor());
         oldArticle.get().setArticleName(articleData.getArticleName());
         oldArticle.get().setDesc(articleData.getDesc());
         oldArticle.get().setSubject(articleData.getSubject());

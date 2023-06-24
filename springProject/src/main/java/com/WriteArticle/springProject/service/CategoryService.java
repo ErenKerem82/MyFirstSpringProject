@@ -48,7 +48,7 @@ public class CategoryService {
     public void updateArticle(Long id, CategoryDto categoryData) {
         Optional<Category> oldCategory = categoryRepository.findById(id);
         oldCategory.get().setArticle(categoryData.getArticle());
-        oldCategory.get().setName(categoryData.getName());
+        oldCategory.get().setCategoryName(categoryData.getCategoryName());
         modelMapper.map(categoryRepository.save(oldCategory.get()), CategoryDto.class);
     }
 }

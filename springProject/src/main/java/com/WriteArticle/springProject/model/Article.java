@@ -20,6 +20,9 @@ public class Article {
     @Id
     private Long id;
 
+    @Column(name = "Author")
+    private String author;
+
     @Column(name = "articleName")
     private String articleName;
 

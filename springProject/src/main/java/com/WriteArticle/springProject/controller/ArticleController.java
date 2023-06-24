@@ -2,7 +2,6 @@ package com.WriteArticle.springProject.controller;
 
 import com.WriteArticle.springProject.dto.ArticleDto;
 import com.WriteArticle.springProject.service.ArticleService;
-import com.WriteArticle.springProject.model.Article;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

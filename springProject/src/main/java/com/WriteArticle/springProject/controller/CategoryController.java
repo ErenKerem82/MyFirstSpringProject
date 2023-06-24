@@ -1,9 +1,6 @@
 package com.WriteArticle.springProject.controller;
 
 import com.WriteArticle.springProject.dto.CategoryDto;
-import com.WriteArticle.springProject.model.Article;
-import com.WriteArticle.springProject.model.Category;
-import com.WriteArticle.springProject.service.ArticleService;
 import com.WriteArticle.springProject.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

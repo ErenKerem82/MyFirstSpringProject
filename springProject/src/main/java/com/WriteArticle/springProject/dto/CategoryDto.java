@@ -9,18 +9,23 @@ import java.util.List;
 public class CategoryDto {
     private Long id;
     private List<Article> article;
-    private String name;
+    private String categoryName;
+
 
     /*
-    {
+        {
+      "id": 0,
       "article": [
         {
-          "articleName": "test_7de46bafe476",
-          "subject": "test_b66402edce6a",
-          "desc": "test_554c2804cb0b"
+          "id": 0,
+          "author": "",
+          "articleName": "",
+          "subject": "",
+          "desc": ""
         }
       ],
-      "name": "test_f89846f56b8a"
+      "categoryName": ""
     }
      */
+
 }

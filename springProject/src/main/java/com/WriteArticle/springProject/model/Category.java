@@ -19,5 +19,5 @@ public class Category {
     private List<Article> article;
 
     @Column(name = "name")
-    private String name;
+    private String categoryName;
 }

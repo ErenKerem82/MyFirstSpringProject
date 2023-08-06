@@ -1,8 +1,6 @@
 package com.WriteArticle.springProject.dto;
-
 import com.WriteArticle.springProject.model.Article;
 import lombok.Data;
-
 import java.util.List;
 
 @Data

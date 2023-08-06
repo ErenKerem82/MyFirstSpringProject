@@ -1,5 +1,4 @@
 package com.WriteArticle.springProject.dto;
-
 import lombok.Data;
 
 @Data

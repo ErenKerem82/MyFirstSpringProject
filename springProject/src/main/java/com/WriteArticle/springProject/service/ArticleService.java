@@ -1,12 +1,10 @@
 package com.WriteArticle.springProject.service;
-
 import com.WriteArticle.springProject.dto.ArticleDto;
 import com.WriteArticle.springProject.repository.ArticleRepository;
 import com.WriteArticle.springProject.model.Article;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -31,9 +29,8 @@ public class ArticleService {
 
     public List<ArticleDto> getAllArticle(){
         List<Article> articles = articleRepository.findAll();
-        List<ArticleDto> articleDtos = articles.stream().map(article -> modelMapper.map(article,ArticleDto.class))
+        return articles.stream().map(article -> modelMapper.map(article,ArticleDto.class))
                 .collect(Collectors.toList());
-        return articleDtos;
     }
 
     public ArticleDto getArticleById(Long id){

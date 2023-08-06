@@ -1,11 +1,7 @@
 package com.WriteArticle.springProject.model;
-
-
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.Hibernate;
 
-import java.util.Objects;
 
 @Getter
 @Setter

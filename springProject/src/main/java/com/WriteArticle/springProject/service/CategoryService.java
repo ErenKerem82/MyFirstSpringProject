@@ -1,13 +1,8 @@
 package com.WriteArticle.springProject.service;
-
-import com.WriteArticle.springProject.dto.ArticleDto;
 import com.WriteArticle.springProject.dto.CategoryDto;
-import com.WriteArticle.springProject.model.Article;
 import com.WriteArticle.springProject.model.Category;
-import com.WriteArticle.springProject.repository.ArticleRepository;
 import com.WriteArticle.springProject.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +20,8 @@ public class CategoryService {
 
     public List<CategoryDto> getAllCategory(){
         List<Category> categories = categoryRepository.findAll();
-        List<CategoryDto> categoryDtos = categories.stream().map(category -> modelMapper.map(category,CategoryDto.class))
+        return categories.stream().map(category -> modelMapper.map(category,CategoryDto.class))
                 .collect(Collectors.toList());
-        return categoryDtos;
     }
 
     public CategoryDto getCategoryById(Long id){

@@ -1,12 +1,17 @@
 package com.WriteArticle.springProject.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Table(name = "/category")
 public class Category {
     @Id
@@ -16,8 +21,11 @@ public class Category {
 
     @OneToMany(cascade = CascadeType.ALL)
     @Column(name = "article")
+    @ToString.Exclude
     private List<Article> article;
 
     @Column(name = "name")
     private String categoryName;
+
+
 }
